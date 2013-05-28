@@ -1,0 +1,127 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="clr-namespace:DTGuide.ViewModels"
+    x:Class="DTGuide.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!--Panorama 控件-->
+        <phone:Panorama Title="Design Thinking Guide" x:Name="pan">
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="/DTGuide;component/Assets/PanoramaBackground.png"/>
+            </phone:Panorama.Background>
+
+            <!--Panorama 项目一-->
+            <phone:PanoramaItem Header="Overview">
+                <StackPanel Margin="0,-6,0,12">
+                    <TextBlock x:Name="tb1" Text="1. 360 Research" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Tap="TextBlock_Tap"/>
+                    <TextBlock x:Name="tb2" Text="2. Synthesis" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Tap="TextBlock_Tap"/>
+                    <TextBlock x:Name="tb3" Text="3. Ideation" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Tap="TextBlock_Tap"/>
+                    <TextBlock x:Name="tb4" Text="4. ProtoTyping" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Tap="TextBlock_Tap"/>
+                    <TextBlock x:Name="tb5" Text="5. Validation" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Tap="TextBlock_Tap"/>
+                </StackPanel>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem Header="360 Research">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Understand your challenge." TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                            <TextBlock Text="Get Smart Fast." TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="What do you want to know?" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Assign roles." TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem Header="Synthesis">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Width="300"  Text="Share what you heard and saw. Tell your story" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <CheckBox/>
+                        <TextBlock Text="Note the data points on post-it notes" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Text="Stick the notes on the wall" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Text="Cluster and prioritize your data points" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PanoramaItem>
+            
+            <phone:PanoramaItem Header="Ideation">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Define 2-3 HMW-Questions" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Brianstorm ideas." TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Cluster your ideas" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Prioritize your ideas" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PanoramaItem>
+            
+            <phone:PanoramaItem Header="Prototyping">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Width="300" Text="Build your idea with whatever you can use." TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem Header="Validation">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Validate your idea" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,-6,0,12">
+                        <CheckBox/>
+                        <TextBlock Text="Get Feedback from other teams" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PanoramaItem>
+
+
+        </phone:Panorama>
+
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+
+    </Grid>
+</phone:PhoneApplicationPage>
