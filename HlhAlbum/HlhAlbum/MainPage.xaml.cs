@@ -19,7 +19,28 @@ namespace HlhAlbum
             InitializeComponent();
 
             // 用于本地化 ApplicationBar 的示例代码
-            //BuildLocalizedApplicationBar();
+            this.ApplicationBar = new ApplicationBar();
+            this.ApplicationBar.IsVisible = true;
+            this.ApplicationBar.IsMenuEnabled = true;
+
+            ApplicationBarMenuItem abmi = new ApplicationBarMenuItem("退出");
+            abmi.Click += abmi_Click;
+
+            this.ApplicationBar.MenuItems.Add(abmi);
+
+        }
+
+        void abmi_Click(object sender, EventArgs e)
+        {
+            Application.Current.Terminate();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string dest = "/PhotoView.xaml";
+            dest += "?q=";
+            dest += ((Button)sender).Content.ToString();
+            this.NavigationService.Navigate(new Uri(dest, UriKind.Relative));
         }
 
         // 用于生成本地化 ApplicationBar 的示例代码

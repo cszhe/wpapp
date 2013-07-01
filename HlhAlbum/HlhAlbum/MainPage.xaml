@@ -41,12 +41,28 @@
 
         <!--TitlePanel 包含应用程序的名称和页标题-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="页面名称" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="何乐华风景摄影作品集" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle2Style}"/>
         </StackPanel>
 
         <!--ContentPanel - 在此处放置其他内容-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Button Background="{StaticResource PhoneAccentBrush}" Height="173" Width="173" Margin="12,0,0,0" Content="草原" Click="Button_Click"/>
+                    <Button Background="{StaticResource PhoneAccentBrush}" Height="173" Width="173" Margin="12,0,0,0" Content="花卉" Click="Button_Click"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Button Background="{StaticResource PhoneAccentBrush}" Height="173" Width="173" Margin="12,0,0,0" Content="建筑" Click="Button_Click"/>
+                    <Button Background="{StaticResource PhoneAccentBrush}" Height="173" Width="173" Margin="12,0,0,0" Content="夜景" Click="Button_Click" />
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Button Background="{StaticResource PhoneAccentBrush}" Height="173" Width="173" Margin="12,0,0,0" Content="山景" Click="Button_Click" />
+                    <Button Background="{StaticResource PhoneAccentBrush}" Height="173" Width="173" Margin="12,0,0,0" Content="水景" Click="Button_Click"/>
+                </StackPanel>
+
+            </StackPanel>
 
         </Grid>
 
